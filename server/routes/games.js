@@ -9,7 +9,7 @@ let UserModel = require('../models/users');
 let User = UserModel.User; // alias for User Model - User object
 
 // define the game model
-let contactlist = require('../models/contactlist');
+let game = require('../models/games');
 
 // create a function to check if the user is authenticated
 function requireAuth(req, res, next) {
@@ -27,9 +27,9 @@ router.get('/', requireAuth, (req, res, next) => {
         if (err) {
             return console.error(err);
         } else {
-            res.render('contactlist/index', {
-                title: 'ContactList',
-                contactlist: contactlist,
+            res.render('games/index', {
+                title: 'Games',
+                games: games,
                 displayName: req.user.displayName
             });
         }
@@ -39,7 +39,7 @@ router.get('/', requireAuth, (req, res, next) => {
 
 //  GET the Game Details page in order to add a new Game
 router.get('/add', requireAuth, (req, res, next) => {
-    res.render('contactlist/details', {
+    res.render('games/details', {
         title: "Add a new Game",
         games: '',
         displayName: req.user.displayName
@@ -51,8 +51,8 @@ router.post('/add', requireAuth, (req, res, next) => {
 
     let newGame = game({
         "name": req.body.name,
-        "number": req.body.cost,
-        "email": req.body.rating
+        "cost": req.body.cost,
+        "rating": req.body.rating
     });
 
     game.create(newGame, (err, game) => {
@@ -60,7 +60,7 @@ router.post('/add', requireAuth, (req, res, next) => {
             console.log(err);
             res.end(err);
         } else {
-            res.redirect('/contactlist');
+            res.redirect('/games');
         }
     });
 });
@@ -79,9 +79,9 @@ router.get('/:id', requireAuth, (req, res, next) => {
                 res.end(error);
             } else {
                 // show the game details view
-                res.render('contactlist/details', {
-                    title: 'Contact Details',
-                    contactlist: contactlist,
+                res.render('games/details', {
+                    title: 'Game Details',
+                    games: games,
                     displayName: req.user.displayName
                 });
             }
@@ -100,8 +100,8 @@ router.post('/:id', requireAuth, (req, res, next) => {
     let updatedGame = game({
         "_id": id,
         "name": req.body.name,
-        "number": req.body.cost,
-        "email": req.body.rating
+        "cost": req.body.cost,
+        "rating": req.body.rating
     });
 
     game.update({ _id: id }, updatedGame, (err) => {
@@ -110,7 +110,7 @@ router.post('/:id', requireAuth, (req, res, next) => {
             res.end(err);
         } else {
             // refresh the game List
-            res.redirect('/contactlist');
+            res.redirect('/games');
         }
     });
 
@@ -127,7 +127,7 @@ router.get('/delete/:id', requireAuth, (req, res, next) => {
             res.end(err);
         } else {
             // refresh the games list
-            res.redirect('/contactlist');
+            res.redirect('/games');
         }
     });
 });
