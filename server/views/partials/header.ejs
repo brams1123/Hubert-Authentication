@@ -23,20 +23,20 @@
         <% if(title == "Home") { %>
           <li class="active"><a href="/">
           <i class="fa fa-home w3-xxlarge"></i>
-          </i> Home</a></li>
+          </i> HOME</a></li>
         <% } else { %>
           <li><a href="/">
           <i class="fa fa-home w3-xxlarge"></i>
-          </i> Home</a></li>
+          </i> HOME</a></li>
         <% } %>
 
         <% if(typeof displayName == 'string' && displayName) { %>
           <% if(title == "ContactList") { %>
-          <li class="active"><a href="/games">
+          <li class="active"><a href="/contactlist">
           <i class="fa fa-gamepad fa-lg">
           </i> Contact List</a></li>
           <% } else { %>
-            <li><a href="/games">
+            <li><a href="/contactlist">
             <i class="fa fa-gamepad fa-lg">
             </i> Contact List</a></li>
           <% } %>
@@ -45,18 +45,18 @@
         <% if(title == "Contact") { %>
           <li class="active"><a href="/contact">
           <i class="fa fa-phone w3-xxlarge">
-          </i> Contact</a></li>
+          </i> CONTACT</a></li>
         <% } else { %>
           <li><a href="/contact">
           <i class="fa fa-phone w3-xxlarge">
-          </i> Contact</a></li>
+          </i> CONTACT</a></li>
         <% } %>
 
         <% if(typeof displayName == 'string' && displayName) { %>
           <li class="navbar-text"><i class="fa fa-user w3-xxlarge"></i> Welcome, <%= displayName %></li>
-          <li><a href="/logout"><i class="fa fa-sign-out w3-xxlarge"></i> Logout</a></li>
+          <li><a href="/logout"><i class="fa fa-sign-out w3-xxlarge"></i> LOGOUT</a></li>
         <% } else { %>
-          <li><a href="/login"><i class="fa fa-sign-in w3-xxlarge"></i> Login</a></li>
+          <li><a href="/login"><i class="fa fa-sign-in w3-xxlarge"></i> LOGIN</a></li>
         <% } %>
 
       </ul>
