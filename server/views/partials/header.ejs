@@ -14,42 +14,49 @@
 
   <!-- Icon Bar (Sidenav - hidden on small screens) -->
     <nav class="w3-sidenav w3-center w3-small w3-hide-small">
-        <!-- Avatar image in top left corner -->
-        <img src="../images/image1.jpg" style='width:100%'>
-      </button>
-      <a class="navbar-brand" href="/"><i class="fa fa-fort-awesome"></i>Hubert ContactList</a>
+      <a class="navbar-brand" href="/"></i>Hubert ContactList</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
         <% if(title == "Home") { %>
-          <li class="active"><a href="/"><i class="fa fa-home fa-lg"></i> Home</a></li>
+          <li class="active"><a href="/">
+          <i class="fa fa-home w3-xxlarge"></i>
+          </i> Home</a></li>
         <% } else { %>
-          <li><a href="/"><i class="fa fa-home fa-lg"></i> Home</a></li>
+          <li><a href="/">
+          <i class="fa fa-home w3-xxlarge"></i>
+          </i> Home</a></li>
         <% } %>
 
         <% if(typeof displayName == 'string' && displayName) { %>
           <% if(title == "ContactList") { %>
-          <li class="active"><a href="/games"><i class="fa fa-gamepad fa-lg">
+          <li class="active"><a href="/games">
+          <i class="fa fa-gamepad fa-lg">
           </i> Contact List</a></li>
           <% } else { %>
-            <li><a href="/games"><i class="fa fa-gamepad fa-lg">
+            <li><a href="/games">
+            <i class="fa fa-gamepad fa-lg">
             </i> Contact List</a></li>
           <% } %>
         <% } %>
 
         <% if(title == "Contact") { %>
-          <li class="active"><a href="/contact"><i class="fa fa-phone fa-lg"></i> Contact</a></li>
+          <li class="active"><a href="/contact">
+          <i class="fa fa-phone w3-xxlarge">
+          </i> Contact</a></li>
         <% } else { %>
-          <li><a href="/contact"><i class="fa fa-phone fa-lg"></i> Contact</a></li>
+          <li><a href="/contact">
+          <i class="fa fa-phone w3-xxlarge">
+          </i> Contact</a></li>
         <% } %>
 
         <% if(typeof displayName == 'string' && displayName) { %>
-          <li class="navbar-text"><i class="fa fa-user"></i> Welcome, <%= displayName %></li>
-          <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+          <li class="navbar-text"><i class="fa fa-user w3-xxlarge"></i> Welcome, <%= displayName %></li>
+          <li><a href="/logout"><i class="fa fa-sign-out w3-xxlarge"></i> Logout</a></li>
         <% } else { %>
-          <li><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
+          <li><a href="/login"><i class="fa fa-sign-in w3-xxlarge"></i> Login</a></li>
         <% } %>
 
       </ul>
