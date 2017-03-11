@@ -38,6 +38,30 @@ router.get('/contact', (req, res, next) => {
     });
 });
 
+router.get('/about', (req, res, next) => {
+    res.render('content/about', {
+        title: 'About',
+        contactlist: '',
+        displayName: req.user ? req.user.displayName : ''
+    });
+});
+
+router.get('/projects', (req, res, next) => {
+    res.render('content/projects', {
+        title: 'Projects',
+        contactlist: '',
+        displayName: req.user ? req.user.displayName : ''
+    });
+});
+
+router.get('/services', (req, res, next) => {
+    res.render('content/services', {
+        title: 'Contact',
+        contactlist: '',
+        displayName: req.user ? req.user.displayName : ''
+    });
+});
+
 // GET /login - render the login view
 router.get('/login', (req, res, next) => {
     // check to see if the user is not already logged in
