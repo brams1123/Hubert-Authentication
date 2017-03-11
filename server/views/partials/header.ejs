@@ -34,6 +34,36 @@
           </i> Home</a></li>
         <% } %>
 
+        <% if(title == "ABOUT") { %>
+          <li class="active"><a href="/contact">
+          <i class="fa fa-user w3-xxlarge">
+          </i> ABOUT</a></li>
+        <% } else { %>
+          <li><a href="/contact">
+          <i class="fa fa-user w3-xxlarge">
+          </i> ABOUT</a></li>
+        <% } %>
+
+        <% if(title == "PROJECTS") { %>
+          <li class="active"><a href="/contact">
+          <i class="fa fa-archive w3-xxlarge">
+          </i> PROJECTS</a></li>
+        <% } else { %>
+          <li><a href="/contact">
+          <i class="fa fa-archive w3-xxlarge">
+          </i> PROJECTS</a></li>
+        <% } %>
+
+        <% if(title == "SERVICES") { %>
+          <li class="active"><a href="/contact">
+          <i class="fa fa-briefcase w3-xxlarge">
+          </i> SERVICES</a></li>
+        <% } else { %>
+          <li><a href="/contact">
+          <i class="fa fa-briefcase w3-xxlarge">
+          </i> SERVICES</a></li>
+        <% } %>
+
         <% if(typeof displayName == 'string' && displayName) { %>
           <% if(title == "ContactList") { %>
           <li class="active"><a href="/games">

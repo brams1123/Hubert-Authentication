@@ -1,0 +1,57 @@
+<% include ../partials/header.ejs %>
+<!-- Site url = http://hubertosifo.azurewebsites.net/
+  Author: Hubert Osifo
+  Filename: Projects.ejs - Project 
+  Description - what I have done
+  Script link - http://w3schools.com/lib/w3.css
+  https://fonts.googleapis.com/css?family=Montserrat
+  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+  -->
+
+    <!-- MAIN CONTENT -->
+    <div class="w3-padding-large" id="main">
+  <!-- Header/Project -->
+<br>
+<br>
+<br>
+<h2 class="w3-text-light-grey">My Projects</h2>
+<hr style="width:200px" class="w3-opacity">
+<br>
+<br>
+<br>
+  <table class="w3-table">
+<tr>
+  <th>Projects</th>
+  <th>Prgram</th>
+  <th>Links</th>
+</tr>
+<tr>
+  <td>The Exterminator</td>
+  <td>Game Programming</td>
+  <td><a href=https://github.com/brams1123/ProjectF2016>Github</td>
+</tr>
+<tr>
+  <td>Hudson Bay</td>
+  <td>Web Design</td>
+  <td><a href=http://studentweb.cencol.ca/hosifo/Assign02.html>Link</td>
+</tr>
+<tr>
+  <td>Canvas Game</td>
+  <td>Web Design</td>
+  <td><a href=http://studentweb.cencol.ca/hosifo/Assignment4.html>Link</td>
+</tr>
+<tr>
+  <td>Centennial College</td>
+  <td>Web Design</td>
+  <td><a href=http://studentweb.cencol.ca/hosifo/assignment3.html>Link</td>
+</tr>
+<tr>
+  <td>Portfolio</td>
+  <td>Node</td>
+  <td><a href=http://studentweb.cencol.ca/hosifo/Assignment4.html>Link</td>
+</tr>
+
+</table>
+    </div>
+
+<% include ../partials/footer.ejs %>

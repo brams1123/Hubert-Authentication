@@ -1,15 +1,36 @@
 <% include ../partials/header.ejs %>
+<!-- Site url = http://hubertosifo.azurewebsites.net/
+  Author: Hubert Osifo
+  Filename: contact.ejs - contact 
+  Description - contact me 
+  Script link - http://w3schools.com/lib/w3.css
+  https://fonts.googleapis.com/css?family=Montserrat
+  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+  -->
 
-    <!-- MAIN CONTENT -->
-    <div class="container">
-      <div class="row">
-        <div class="col-md-offset-3 col-md-6">
-          <h1><%= title %></h1>
-          <p>Contact Me</p>
-        </div>
-      </div>
-    </div>
+<div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
 
-<% include ../partials/footer.ejs %>
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Toront, CA</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: 647 519 1113</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: brams1123@gmail.com</p>
+    </div><br>
+    <p>Lets get in touch. Send me a message:</p>
 
+    <form action="mailto:brams1123@gmail.com" method="post" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-btn w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>
 
+  <% include ../partials/footer.ejs %>
