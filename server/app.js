@@ -23,12 +23,12 @@ mongoose.connect(process.env.URI || config.URI);
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
-  console.log("Conneced to MongoDB...");
+    console.log("Conneced to MongoDB...");
 });
 
 // define routers
 let index = require('./routes/index'); // top level routes
-let games = require('./routes/games'); // routes for games
+let contactlist = require('./routes/contactlist'); // routes for contactlist
 
 let app = express();
 
@@ -46,9 +46,9 @@ app.use(express.static(path.join(__dirname, '../client')));
 
 // setup session
 app.use(session({
-  secret: "SomeSecret",
-  saveUninitialized: true,
-  resave: true
+    secret: "SomeSecret",
+    saveUninitialized: true,
+    resave: true
 }));
 
 // initialize passport and flash
@@ -58,7 +58,7 @@ app.use(passport.session());
 
 // route redirects
 app.use('/', index);
-app.use('/games', games);
+app.use('/contactlist', contactlist);
 
 // Passport User Configuration
 let UserModel = require('./models/users');
@@ -68,20 +68,20 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // Handle 404 Errors
-  app.use(function(req, res) {
-      res.status(400);
-     res.render('errors/404',{
-      title: '404: File Not Found'
+app.use(function(req, res) {
+    res.status(400);
+    res.render('errors/404', {
+        title: '404: File Not Found'
     });
-  });
+});
 
-  // Handle 500 Errors
-  app.use(function(error, req, res, next) {
-      res.status(500);
-      res.render('errors/500', {
-        title:'500: Internal Server Error',
+// Handle 500 Errors
+app.use(function(error, req, res, next) {
+    res.status(500);
+    res.render('errors/500', {
+        title: '500: Internal Server Error',
         error: error
-      });
-  });
+    });
+});
 
 module.exports = app;
