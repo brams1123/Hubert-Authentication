@@ -3,7 +3,7 @@ let mongoose = require('mongoose');
 // create a model class
 let contactSchema = mongoose.Schema({
     name: String,
-    phone: Number,
+    phone: String,
     email: String
 }, {
     collection: "contactlist"

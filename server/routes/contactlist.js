@@ -40,7 +40,7 @@ router.get('/', requireAuth, (req, res, next) => {
 //  GET the Game Details page in order to add a new Game
 router.get('/add', requireAuth, (req, res, next) => {
     res.render('contactlist/details', {
-        title: "Add a new Game",
+        title: "Add a new Contact",
         contactlist: '',
         displayName: req.user.displayName
     });
@@ -51,8 +51,8 @@ router.post('/add', requireAuth, (req, res, next) => {
 
     let newGame = game({
         "name": req.body.name,
-        "phone": req.body.cost,
-        "email": req.body.rating
+        "phone": req.body.phone,
+        "email": req.body.email
     });
 
     game.create(newGame, (err, game) => {
@@ -100,8 +100,8 @@ router.post('/:id', requireAuth, (req, res, next) => {
     let updatedGame = game({
         "_id": id,
         "name": req.body.name,
-        "phone": req.body.cost,
-        "email": req.body.rating
+        "phone": req.body.phone,
+        "email": req.body.email
     });
 
     game.update({ _id: id }, updatedGame, (err) => {
