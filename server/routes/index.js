@@ -56,7 +56,7 @@ router.get('/projects', (req, res, next) => {
 
 router.get('/services', (req, res, next) => {
     res.render('content/services', {
-        title: 'Contact',
+        title: 'Services',
         contactlist: '',
         displayName: req.user ? req.user.displayName : ''
     });

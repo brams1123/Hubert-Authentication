@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
     <!-- CSS SECTION -->
     <link rel="stylesheet" href="/Scripts/lib/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/Scripts/lib/bootstrap/dist/css/bootstrap-theme.min.css">
@@ -11,88 +14,115 @@
     <link rel='stylesheet' href='/Content/app.css' />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
+</head>
 
-  <body>
+<body>
 
-  <!-- Icon Bar (Sidenav - hidden on small screens) -->
+    <!-- Icon Bar (Sidenav - hidden on small screens) -->
     <nav class="w3-sidenav w3-center w3-small w3-hide-small">
-    <!-- Avatar image in top left corner -->
+        <!-- Avatar image in top left corner -->
         <img src="../images/image1.jpg" style='width:100%'>
-    </div>
+        </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <% if(title == "Home") { %>
-          <li class="active"><a href="/">
-          <i class="fa fa-home fa-lg w3-xxlarge"></i>
-          </i> HOME</a></li>
-          <% } else { %>
-          <li><a href="/">
-          <i class="fa fa-home fa-lg w3-xxlarge"></i>
-          </i> Home</a></i>
-        <% } %>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <% if(title == "Home") { %>
+                    <li class="active">
+                        <a href="/">
+                            <i class="fa fa-home fa-lg w3-xxlarge"></i>
+                            </i> HOME</a>
+                    </li>
+                    <% } else { %>
+                        <li>
+                            <a href="/">
+                                <i class="fa fa-home fa-lg w3-xxlarge"></i>
+                                </i> Home</a>
+                            </i>
+                            <% } %>
 
-        <% if(title == "ABOUT") { %>
-          <li class="active"><a href="/about">
-          <i class="fa fa-user w3-xxlarge">
-          </i> ABOUT</a></li>
-        <% } else { %>
-          <li><a href="/contact">
-          <i class="fa fa-user w3-xxlarge">
-          </i> ABOUT</a></i>
-        <% } %>
+                                <% if(title == "ABOUT") { %>
+                                    <li class="active">
+                                        <a href="/about">
+                                            <i class="fa fa-user w3-xxlarge">
+          </i> ABOUT</a>
+                                    </li>
+                                    <% } else { %>
+                                        <li>
+                                            <a href="/about">
+                                                <i class="fa fa-user w3-xxlarge">
+          </i> ABOUT</a>
+                                            </i>
+                                            <% } %>
 
-        <% if(title == "PROJECTS") { %>
-          <li class="active"><a href="/projects">
-          <i class="fa fa-archive w3-xxlarge">
-          </i> PROJECTS</a></li>
-        <% } else { %>
-          <li><a href="/contact">
-          <i class="fa fa-archive w3-xxlarge">
-          </i> PROJECTS</a></li>
-        <% } %>
+                                                <% if(title == "PROJECTS") { %>
+                                                    <li class="active">
+                                                        <a href="/projects">
+                                                            <i class="fa fa-archive w3-xxlarge">
+          </i> PROJECTS</a>
+                                                    </li>
+                                                    <% } else { %>
+                                                        <li>
+                                                            <a href="/projects">
+                                                                <i class="fa fa-archive w3-xxlarge">
+          </i> PROJECTS</a>
+                                                        </li>
+                                                        <% } %>
 
-        <% if(title == "SERVICES") { %>
-          <li class="active"><a href="/services">
-          <i class="fa fa-briefcase w3-xxlarge">
-          </i> SERVICES</a></li>
-        <% } else { %>
-          <li><a href="/contact">
-          <i class="fa fa-briefcase w3-xxlarge">
-          </i> SERVICES</a></li>
-        <% } %>
+                                                            <% if(title == "SERVICES") { %>
+                                                                <li class="active">
+                                                                    <a href="/services">
+                                                                        <i class="fa fa-briefcase w3-xxlarge">
+          </i> SERVICES</a>
+                                                                </li>
+                                                                <% } else { %>
+                                                                    <li>
+                                                                        <a href="/services">
+                                                                            <i class="fa fa-briefcase w3-xxlarge">
+          </i> SERVICES</a>
+                                                                    </li>
+                                                                    <% } %>
 
-        <% if(typeof displayName == 'string' && displayName) { %>
-          <% if(title == "ContactList") { %>
-          <li class="active"><a href="/games">
-          <i class="fa fa-briefcase fa-lg w3-xxlarge">
-          </i> Contact List</a></li>
-          <% } else { %>
-            <li><a href="/games">
-            <i class="fa fa-briefcase fa-lg w3-xxlarge">
-            </i> Contact List</a></li>
-          <% } %>
-        <% } %>
+                                                                        <% if(typeof displayName == 'string' && displayName) { %>
+                                                                            <% if(title == "ContactList") { %>
+                                                                                <li class="active">
+                                                                                    <a href="/games">
+                                                                                        <i class="fa fa-briefcase fa-lg w3-xxlarge">
+          </i> Contact List</a>
+                                                                                </li>
+                                                                                <% } else { %>
+                                                                                    <li>
+                                                                                        <a href="/games">
+                                                                                            <i class="fa fa-briefcase fa-lg w3-xxlarge">
+            </i> Contact List</a>
+                                                                                    </li>
+                                                                                    <% } %>
+                                                                                        <% } %>
 
-        <% if(title == "Contact") { %>
-          <li class="active"><a href="/contact">
-          <i class="fa fa-phone w3-xxlarge">
-          </i> CONTACT</a></li>
-        <% } else { %>
-          <li><a href="/contact">
-          <i class="fa fa-phone w3-xxlarge">
-          </i> CONTACT</a></li>
-        <% } %>
+                                                                                            <% if(title == "Contact") { %>
+                                                                                                <li class="active">
+                                                                                                    <a href="/contact">
+                                                                                                        <i class="fa fa-phone w3-xxlarge">
+          </i> CONTACT</a>
+                                                                                                </li>
+                                                                                                <% } else { %>
+                                                                                                    <li>
+                                                                                                        <a href="/contact">
+                                                                                                            <i class="fa fa-phone w3-xxlarge">
+          </i> CONTACT</a>
+                                                                                                    </li>
+                                                                                                    <% } %>
 
-        <% if(typeof displayName == 'string' && displayName) { %>
-          <li class="navbar-text"><i class="fa fa-user w3-xxlarge"></i> Welcome, <%= displayName %></li>
-          <li><a href="/logout"><i class="fa fa-sign-out w3-xxlarge"></i> LOGOUT</a></li>
-        <% } else { %>
-          <li><a href="/login"><i class="fa fa-sign-in w3-xxlarge"></i> LOGIN</a></li>
-        <% } %>
+                                                                                                        <% if(typeof displayName == 'string' && displayName) { %>
+                                                                                                            <li class="navbar-text"><i class="fa fa-user w3-xxlarge"></i> Welcome,
+                                                                                                                <%= displayName %>
+                                                                                                            </li>
+                                                                                                            <li><a href="/logout"><i class="fa fa-sign-out w3-xxlarge"></i> LOGOUT</a></li>
+                                                                                                            <% } else { %>
+                                                                                                                <li><a href="/login"><i class="fa fa-sign-in w3-xxlarge"></i> LOGIN</a></li>
+                                                                                                                <% } %>
 
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </nav>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
